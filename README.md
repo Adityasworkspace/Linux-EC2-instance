@@ -1,3 +1,5 @@
+https://www.linkedin.com/posts/aditya-chikte-2176a21b5_aws-ec2-cloudcomputing-activity-7206197048923086849-NVnS?utm_source=share&utm_medium=member_desktop
+
 # Linux-EC2-instance
 # EC2 Linux Instance Creation Guide
 
