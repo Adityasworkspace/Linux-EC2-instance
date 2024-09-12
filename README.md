@@ -1,6 +1,5 @@
 https://www.linkedin.com/posts/aditya-chikte-2176a21b5_aws-ec2-cloudcomputing-activity-7206197048923086849-NVnS?utm_source=share&utm_medium=member_desktop
 
-# Linux-EC2-instance
 # EC2 Linux Instance Creation Guide
 
 This repository provides a detailed step-by-step guide to creating an Amazon EC2 Linux instance using the AWS Free Tier.
@@ -8,6 +7,7 @@ This repository provides a detailed step-by-step guide to creating an Amazon EC2
 ## Prerequisites
 - AWS Free Tier account
 - Basic understanding of cloud computing and AWS services
+- MobaXterm installed on your local machine
 
 ## Step-by-Step Instructions
 
@@ -80,21 +80,24 @@ This repository provides a detailed step-by-step guide to creating an Amazon EC2
 
 1. Once the instance is launched, go to the **Instances** page in the EC2 Dashboard.
 2. Select your instance, and click **Connect**.
-3. Follow the instructions provided to connect to your Linux instance via SSH.
-    - You will need the key pair (.pem) file to connect.
+3. Follow the instructions provided to connect to your Linux instance via SSH or MobaXterm.
 
-### Step 13: Connect to the Linux Instance
+### Step 13: Connect to the Linux Instance Using MobaXterm
 
-1. Open a terminal on your local machine.
-2. Change the permissions of your key pair file to be readable only by you:
-    ```bash
-    chmod 400 MyLinuxKeyPair.pem
-    ```
-3. Use the SSH command provided by AWS to connect to your instance:
-    ```bash
-    ssh -i "MyLinuxKeyPair.pem" ec2-user@<Public-IP>
-    ```
-    - Replace `<Public-IP>` with the actual public IP address of your EC2 instance.
+#### Install MobaXterm:
+- Download and install MobaXterm from the [official website](https://mobaxterm.mobatek.net/download.html).
+
+#### Steps to Connect:
+
+1. Open **MobaXterm** on your local machine.
+2. Click on the **Session** icon in the top-left corner.
+3. Select **SSH** as the session type.
+4. In the **Remote Host** field, enter the **Public IP** address of your EC2 instance.
+5. Ensure the **Port** is set to `22` (default for SSH).
+6. In the **Username** field, enter `ec2-user` (for Amazon Linux).
+7. Select **Use private key** and browse to the location where your `.pem` key file is stored (the key pair you downloaded during the instance launch process).
+8. Click **OK** to initiate the connection.
+9. MobaXterm will establish the SSH connection, and you will be logged into your EC2 instance's terminal.
 
 ### Step 14: Terminate the Instance
 
@@ -109,3 +112,4 @@ This repository provides a detailed step-by-step guide to creating an Amazon EC2
 ## Additional Resources
 - [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
 - [AWS Free Tier](https://aws.amazon.com/free/)
+- [MobaXterm Documentation](https://mobaxterm.mobatek.net/documentation.html)
